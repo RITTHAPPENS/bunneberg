@@ -157,9 +157,9 @@ p { margin: 0; text-wrap: pretty; }
 .object-grid span { font-size: 0.94rem; color: var(--ink-soft); line-height: 1.45; }
 
 /* Arbeitsweise */
-.approach { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(36px, 6vw, 96px); align-items: center; }
-.approach-img { margin: 0; aspect-ratio: 4 / 3.4; background: var(--grey); overflow: hidden; }
-.approach-img img { width: 100%; height: 100%; object-fit: cover; }
+.approach { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(36px, 6vw, 96px); align-items: stretch; }
+.approach-img { margin: 0; min-height: 360px; background: var(--grey); overflow: hidden; }
+.approach-img img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 60%; }
 .img-slot { height: 100%; display: grid; place-content: center; justify-items: center; gap: 10px; color: #8a90a8; font-weight: 560; border: 1px dashed #c3c8d6; }
 .img-slot .icon { width: 40px; height: 40px; }
 .approach-lead { margin-top: 18px; color: var(--ink-soft); font-size: 1.1rem; }
@@ -293,6 +293,7 @@ p { margin: 0; text-wrap: pretty; }
   .service, .service-main { grid-column: auto; grid-row: auto; }
   .service-main .service-img { flex: none; aspect-ratio: 16 / 9; min-height: 0; }
   .service-img { aspect-ratio: 16 / 9; }
+  .approach-img { aspect-ratio: 4 / 3; min-height: 0; }
   .approach, .faq-grid, .contact-grid, .areas-grid { grid-template-columns: 1fr; }
   .areas-copy { max-width: none; padding-inline: var(--gutter); }
   .map-panel svg { max-width: 440px; }
