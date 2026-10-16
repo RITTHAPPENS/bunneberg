@@ -99,7 +99,7 @@ p { margin: 0; text-wrap: pretty; }
 /* Hero: Foto ohne Verlauf, Textfeld in Markenblau ragt hinein */
 .hero { --ov: clamp(170px, 17vw, 250px); }
 .hero-photo { height: clamp(320px, 44vw, 600px); background: var(--grey); overflow: hidden; }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 26%; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
 .hero-grid {
   position: relative; display: grid;
   grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-rows: var(--ov) auto;
