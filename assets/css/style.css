@@ -380,3 +380,4 @@ input[type="file"]:focus-visible + .error, .upload:focus-within { outline: 2px s
   .job-form { order: 2; }
   .job-points { order: 3; margin-top: 8px; }
 }
+@media (max-width: 640px) { .hero-actions { gap: 16px 24px; } }
