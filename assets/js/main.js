@@ -28,6 +28,57 @@
   var y = document.getElementById('jahr');
   if (y) y.textContent = new Date().getFullYear();
 
+
+  var bf = document.getElementById('bewerbung-form');
+  if (bf) {
+    var bm = {
+      vorname: 'Bitte geben Sie Ihren Vornamen an.',
+      nachname: 'Bitte geben Sie Ihren Nachnamen an.',
+      email: 'Bitte geben Sie eine gültige E-Mail-Adresse an.',
+      telefon: 'Bitte geben Sie Ihre Telefonnummer an.',
+      datenschutz: 'Bitte stimmen Sie der Datenschutzerklärung zu.'
+    };
+    var cv = document.getElementById('b-cv');
+    var cvText = bf.querySelector('.upload-text');
+    function cvCheck() {
+      var err = cv.closest('.field').querySelector('.error');
+      var f = cv.files && cv.files[0];
+      var msg = '';
+      if (f) {
+        if (!/\.(pdf|docx?)$/i.test(f.name)) msg = 'Bitte laden Sie eine PDF- oder Word-Datei hoch.';
+        else if (f.size > 10 * 1024 * 1024) msg = 'Die Datei ist zu groß (maximal 10 MB).';
+      }
+      err.textContent = msg;
+      cv.closest('.field').classList.toggle('invalid', !!msg);
+      return !msg;
+    }
+    cv.addEventListener('change', function () {
+      cvText.textContent = cv.files && cv.files[0] ? cv.files[0].name : 'Datei auswählen';
+      cvCheck();
+    });
+    function bcheck(el) {
+      var field = el.closest('.field');
+      var ok = el.checkValidity();
+      field.classList.toggle('invalid', !ok);
+      el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+      field.querySelector('.error').textContent = ok ? '' : (bm[el.name] || '');
+      return ok;
+    }
+    bf.querySelectorAll('[required]').forEach(function (el) {
+      el.addEventListener(el.type === 'checkbox' ? 'change' : 'blur', function () { if (el.value || el.type === 'checkbox') bcheck(el); });
+    });
+    bf.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var first = null;
+      bf.querySelectorAll('[required]').forEach(function (el) { if (!bcheck(el) && !first) first = el; });
+      if (!cvCheck() && !first) first = cv;
+      if (first) { first.focus(); return; }
+      var st = bf.querySelector('.form-status');
+      st.hidden = false;
+      st.textContent = 'Vorschau: Im fertigen Formular wird Ihre Bewerbung an dieser Stelle direkt versendet.';
+    });
+  }
+
   var form = document.getElementById('anfrage-form');
   if (!form) return;
   var messages = {
