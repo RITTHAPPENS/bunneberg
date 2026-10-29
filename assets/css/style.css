@@ -497,3 +497,4 @@ input[type="file"]:focus-visible + .error, .upload:focus-within { outline: 2px s
 /* Fließtext einheitlich: Einleitung und Folgeabsatz gleiche Größe und Farbe */
 .svc-lead, .svc-copy > p:not(.svc-lead), .svc-two p:not(.svc-lead) { font-size: 1.08rem; line-height: 1.6; color: var(--ink-soft); }
 .svc-band .svc-lead, .svc-band p:not(.svc-lead) { color: rgba(255, 255, 255, 0.85) !important; }
+main:has(.page-hero) .areas h2, main:has(.page-hero) .faq h2 { font-size: clamp(1.7rem, 1.2rem + 1.4vw, 2.35rem); }
