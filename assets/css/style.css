@@ -498,3 +498,39 @@ input[type="file"]:focus-visible + .error, .upload:focus-within { outline: 2px s
 .svc-lead, .svc-copy > p:not(.svc-lead), .svc-two p:not(.svc-lead) { font-size: 1.08rem; line-height: 1.6; color: var(--ink-soft); }
 .svc-band .svc-lead, .svc-band p:not(.svc-lead) { color: rgba(255, 255, 255, 0.85) !important; }
 main:has(.page-hero) .areas h2, main:has(.page-hero) .faq h2 { font-size: clamp(1.7rem, 1.2rem + 1.4vw, 2.35rem); }
+
+/* Hausmeister und Gebäudemanagement */
+.hm-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(36px, 6vw, 96px); align-items: start; }
+.duty-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.duty-list li { background: #fff; padding: clamp(22px, 2.4vw, 30px); display: grid; gap: 14px; align-content: start; }
+.duty-list li:last-child { background: var(--navy-ink); }
+.duty-list li:last-child h3 { color: #fff; }
+.duty-list li:last-child p { color: rgba(255, 255, 255, 0.8); }
+.duty-list li:last-child .duty-icon { color: var(--teal-light); }
+.duty-icon { width: 34px; height: 34px; color: var(--navy); }
+.duty-list h3 { font-size: 1.12rem; color: var(--navy-ink); }
+.duty-list p { margin-top: 6px; color: var(--ink-soft); font-size: 0.98rem; }
+
+.tech-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(36px, 6vw, 96px); align-items: start; }
+.tech-list { list-style: none; margin: 0; padding: 0; counter-reset: t; }
+.tech-list li { display: grid; gap: 4px; padding: 22px 0 22px 56px; position: relative; border-top: 1px solid var(--line-navy); }
+.tech-list li:last-child { border-bottom: 1px solid var(--line-navy); }
+.tech-list li::before { content: ""; position: absolute; left: 0; top: 24px; width: 32px; height: 32px; background: var(--teal-light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' fill='%230b1040'%3E%3Cpath d='M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z'/%3E%3C/svg%3E") no-repeat center / 18px; }
+.tech-list strong { font-size: 1.15rem; color: #fff; }
+.tech-list span { color: rgba(255, 255, 255, 0.8); }
+
+.outdoor { margin-top: clamp(28px, 4vw, 44px); display: grid; grid-template-columns: 6fr 5fr; grid-template-rows: auto auto; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.outdoor article { background: #fff; padding: clamp(26px, 3vw, 40px); }
+.outdoor article:first-child { grid-row: span 2; background: var(--grey); }
+.outdoor h3 { font-size: 1.3rem; color: var(--navy-ink); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.outdoor p { margin-top: 12px; color: var(--ink-soft); font-size: 1.04rem; max-width: 60ch; }
+.tag-note { font-size: 0.8rem; font-weight: 650; color: var(--navy); border: 1px solid var(--navy); padding: 3px 8px; }
+main:has(.page-hero) .hm-grid h2, main:has(.page-hero) #t-aussen, main:has(.page-hero) .tech-grid h2 { font-size: clamp(1.7rem, 1.2rem + 1.4vw, 2.35rem); }
+
+@media (max-width: 960px) {
+  .hm-grid, .tech-grid, .outdoor { grid-template-columns: 1fr; }
+  .outdoor article:first-child { grid-row: auto; }
+}
+@media (max-width: 640px) { .duty-list { grid-template-columns: 1fr; } }
+.outdoor-img { margin: 24px 0 0; aspect-ratio: 16 / 9; overflow: hidden; }
+.outdoor-img img { width: 100%; height: 100%; object-fit: cover; }
