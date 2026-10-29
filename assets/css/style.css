@@ -494,3 +494,6 @@ input[type="file"]:focus-visible + .error, .upload:focus-within { outline: 2px s
 [id] { scroll-margin-top: 100px; }
 @media (max-width: 960px) { .page-hero-inner > * { max-width: none; } }
 .svc-copy h2, .svc-two h2, .svc-wide h2, .svc-more h2 { font-size: clamp(1.7rem, 1.2rem + 1.4vw, 2.35rem); }
+/* Fließtext einheitlich: Einleitung und Folgeabsatz gleiche Größe und Farbe */
+.svc-lead, .svc-copy > p:not(.svc-lead), .svc-two p:not(.svc-lead) { font-size: 1.08rem; line-height: 1.6; color: var(--ink-soft); }
+.svc-band .svc-lead, .svc-band p:not(.svc-lead) { color: rgba(255, 255, 255, 0.85) !important; }
