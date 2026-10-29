@@ -381,3 +381,19 @@ input[type="file"]:focus-visible + .error, .upload:focus-within { outline: 2px s
   .job-points { order: 3; margin-top: 8px; }
 }
 @media (max-width: 640px) { .hero-actions { gap: 16px 24px; } }
+
+/* Karriere: Stellenliste */
+.jobs-list { margin-top: 36px; }
+.jobs-list h2 { font-size: 1.15rem; color: var(--navy-ink); letter-spacing: -0.01em; margin-bottom: 12px; }
+.jobs-list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.jobs-list a { display: grid; grid-template-columns: 40px 1fr 20px; align-items: center; gap: 14px; padding: 14px 16px; background: #fff; border: 1px solid var(--line); text-decoration: none; color: inherit; transition: border-color 0.2s var(--ease); }
+.jobs-list a:hover { border-color: var(--navy); }
+.job-icon { width: 40px; height: 40px; padding: 8px; background: var(--grey); color: var(--navy); }
+.jobs-list strong { display: block; font-size: 1.05rem; color: var(--navy-ink); }
+.jobs-list small { display: block; font-size: 0.9rem; color: var(--ink-soft); }
+.job-arrow { color: var(--navy); transition: transform 0.3s var(--ease); }
+.jobs-list a:hover .job-arrow { transform: translateX(4px); }
+@media (max-width: 960px) {
+  .jobs-list { order: 3; margin-top: 8px; }
+  .job-points { order: 4; }
+}

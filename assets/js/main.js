@@ -38,6 +38,10 @@
       telefon: 'Bitte geben Sie Ihre Telefonnummer an.',
       datenschutz: 'Bitte stimmen Sie der Datenschutzerklärung zu.'
     };
+    var stelle = document.getElementById('b-stelle');
+    document.querySelectorAll('[data-stelle]').forEach(function (l) {
+      l.addEventListener('click', function () { if (stelle) stelle.value = l.getAttribute('data-stelle'); setTimeout(function () { document.getElementById('b-vorname').focus({ preventScroll: true }); }, 400); });
+    });
     var cv = document.getElementById('b-cv');
     var cvText = bf.querySelector('.upload-text');
     function cvCheck() {
