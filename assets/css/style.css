@@ -550,3 +550,27 @@ main .svc-lead, main .svc-copy p, main .svc-two p, .section-head p, .areas-note,
 .outdoor .outdoor-img img { aspect-ratio: 4 / 3; height: auto; }
 @media (max-width: 1023px) { .outdoor { grid-template-columns: 1fr; } }
 #mietmattenservice .outdoor-img img { object-position: 85% 50%; }
+
+/* Über uns */
+.about-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(36px, 6vw, 96px); align-items: start; }
+.about-grid h2, .principles-section h2 { font-size: clamp(1.7rem, 1.2rem + 1.4vw, 2.35rem); }
+.about-links { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px 32px; }
+.sites { background: var(--navy-ink); color: #fff; padding: clamp(28px, 3.4vw, 44px); }
+.site + .site { margin-top: 26px; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.16); }
+.site h3 { font-size: 1.15rem; color: #fff; }
+.site address { margin-top: 8px; font-style: normal; color: rgba(255, 255, 255, 0.82); font-size: var(--body-size); line-height: var(--body-lh); }
+.site a, .site-mail { margin-top: 12px; display: inline-flex; align-items: center; gap: 10px; color: var(--teal-light); font-weight: 650; text-decoration: none; }
+.site a:hover span, .site-mail:hover span { text-decoration: underline; }
+.site-mail { margin-top: 30px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.16); display: flex; }
+.principles-section { background: var(--grey); }
+.principle-icon { width: 30px; height: 30px; color: var(--teal); flex: none; }
+.principle-lead { margin-top: clamp(28px, 4vw, 44px); display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 22px; padding: clamp(28px, 3.6vw, 48px); background: var(--navy); color: #fff; }
+.principle-lead .principle-icon { width: 40px; height: 40px; color: var(--teal-light); }
+.principle-lead h3 { font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.75rem); color: #fff; letter-spacing: -0.01em; }
+.principle-lead p { margin-top: 12px; max-width: 68ch; color: rgba(255, 255, 255, 0.85); font-size: var(--body-size); line-height: var(--body-lh); }
+.principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(32px, 5vw, 72px); }
+.principles li { padding-top: clamp(28px, 3.4vw, 40px); }
+.principles h3 { margin-top: 14px; font-size: 1.2rem; color: var(--navy-ink); }
+.principles p { margin-top: 8px; color: var(--ink-soft); font-size: var(--body-size); line-height: var(--body-lh); max-width: 60ch; }
+@media (max-width: 1023px) { .about-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .principles { grid-template-columns: 1fr; } .principle-lead { grid-template-columns: 1fr; } }
