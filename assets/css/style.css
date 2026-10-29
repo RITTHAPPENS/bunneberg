@@ -487,3 +487,10 @@ input[type="file"]:focus-visible + .error, .upload:focus-within { outline: 2px s
 .wide-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
 .page-hero-photo img { object-position: 50% 45%; }
 @media (max-width: 960px) { .wide-head { grid-template-columns: 1fr; } }
+/* Unterseiten-Hero ohne Brotkrümel, Überschrift max. zwei Zeilen */
+.page-hero-inner { padding-block: clamp(48px, 6vw, 88px); }
+.page-hero-inner > * { max-width: min(720px, 54%); }
+.page-hero h1 { font-size: clamp(2rem, 1.3rem + 2vw, 3rem); }
+[id] { scroll-margin-top: 100px; }
+@media (max-width: 960px) { .page-hero-inner > * { max-width: none; } }
+.svc-copy h2, .svc-two h2, .svc-wide h2, .svc-more h2 { font-size: clamp(1.7rem, 1.2rem + 1.4vw, 2.35rem); }
